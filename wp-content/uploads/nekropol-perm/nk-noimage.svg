@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <!-- Заглушка для товара без фото: светлый фон, контур венка в стиле обложек, подпись -->
+  <rect width="600" height="600" fill="#f6f3ef"/>
+  <g fill="none" stroke="#c3935b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity=".75">
+    <path d="M300 150c-70 60-100 140-80 220 12 48 44 78 80 90 36-12 68-42 80-90 20-80-10-160-80-220z"/>
+    <path d="M270 300l-25 150M330 300l25 150"/>
+    <circle cx="300" cy="210" r="18"/><circle cx="262" cy="262" r="16"/><circle cx="338" cy="262" r="16"/>
+  </g>
+  <text x="300" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" fill="#85612d">Фото скоро появится</text>
+</svg>

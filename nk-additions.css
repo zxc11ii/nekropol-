@@ -1,0 +1,419 @@
+/* Дополнения к теме WoodMart для локальной версии nekropol159.ru.
+   Переменные только с префиксом --nk- (расширение браузера пользователя пишет свои --dark и т.п. на <html>). */
+:root {
+  --nk-navy: #0d1a34;
+  --nk-gold: #c3935b;
+  --nk-text: #4a4a4a;
+  --nk-muted: #666;
+  --nk-light: #f6f3ef;
+  --nk-line: #e6e0d8;
+  --nk-title-font: "CormorantUnicase-Bold", "Marcellus SC", Georgia, serif;
+  --nk-text-font: "Evolventa-Regular", Arial, sans-serif;
+}
+
+/* иконки Lucide (набор Decidio): цвет от текста, толщина линии 2 */
+.nk-ico { width: 20px; height: 20px; flex-shrink: 0; vertical-align: middle; }
+.nk-btn-ico { display: inline-flex !important; align-items: center; gap: 8px; }
+.nk-btn-ico .nk-ico { width: 18px; height: 18px; }
+
+.nk-visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.nk-section { width: 100vw; margin-left: calc(50% - 50vw); padding: 64px 0; font-family: var(--nk-text-font); color: var(--nk-text); }
+.nk-section.nk-light { background: var(--nk-light); }
+.nk-kicker { color: var(--nk-gold); text-align: center; margin: 0 0 6px; font-size: 16px; }
+.nk-h2 { font-family: var(--nk-title-font); color: var(--nk-navy); text-align: center; font-size: 30px; text-transform: uppercase; margin: 0 0 16px; }
+.nk-lead { text-align: center; max-width: 680px; margin: 0 auto 32px; }
+.nk-center { text-align: center; margin-top: 24px; }
+.nk-link { color: var(--nk-gold); text-decoration: underline; display: inline-flex; align-items: center; gap: 6px; }
+.nk-link .nk-ico { width: 16px; height: 16px; }
+.nk-muted { color: var(--nk-muted); font-size: 13px; margin-top: 10px; }
+
+.nk-steps { list-style: none; padding: 0; margin: 0 auto; max-width: 1140px; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.nk-steps li { display: flex; gap: 14px; background: #fff; border: 1px solid var(--nk-line); padding: 18px; margin: 0; }
+.nk-steps h4 { font-size: 17px; color: var(--nk-navy); margin: 0 0 6px; }
+.nk-steps p { margin: 0; }
+.nk-step-ico { flex: 0 0 44px; height: 44px; border-radius: 50%; background: var(--nk-navy); color: var(--nk-gold); display: grid; place-items: center; }
+.nk-step-ico .nk-ico { width: 22px; height: 22px; }
+.nk-callout { max-width: 1140px; margin: 24px auto 0; background: var(--nk-navy); color: #fff; padding: 20px 24px; display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.nk-callout b { color: var(--nk-gold); }
+
+.nk-faq { max-width: 860px; margin: 0 auto; }
+.nk-faq details { border-bottom: 1px solid var(--nk-line); padding: 14px 0; }
+.nk-faq summary { cursor: pointer; color: var(--nk-navy); font-size: 17px; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 44px; }
+.nk-faq summary::-webkit-details-marker { display: none; }
+.nk-faq-chev { flex: 0 0 20px; height: 20px; color: var(--nk-gold); transition: transform .2s; }
+.nk-faq details[open] .nk-faq-chev { transform: rotate(180deg); }
+.nk-faq p { margin: 10px 0 0; }
+
+.nk-reviews { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.nk-review { background: #fff; border: 1px solid var(--nk-line); padding: 22px; margin: 0; display: flex; flex-direction: column; }
+.nk-review blockquote { margin: 10px 0 16px; padding: 0; border: 0; font-style: normal; flex: 1; font-size: 14px; }
+.nk-review figcaption { display: flex; justify-content: space-between; gap: 8px; font-size: 13px; color: var(--nk-muted); }
+.nk-review figcaption b { color: var(--nk-navy); }
+.nk-stars { color: var(--nk-gold); display: flex; gap: 2px; }
+.nk-star { width: 16px; height: 16px; fill: currentColor; }
+
+.nk-cards { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.nk-card { border-top: 3px solid var(--nk-gold); background: var(--nk-light); padding: 22px; }
+.nk-card h4 { color: var(--nk-navy); margin: 0 0 8px; }
+.nk-card-ico { width: 32px; height: 32px; color: var(--nk-gold); margin-bottom: 12px; }
+.nk-card p { margin: 0; }
+
+.nk-list { margin: 8px 0 0; padding: 0; list-style: none; }
+.nk-list li { margin-bottom: 10px; display: flex; gap: 10px; align-items: flex-start; }
+.nk-list-ico { flex: 0 0 18px; height: 18px; color: var(--nk-gold); margin-top: 3px; }
+
+.nk-req { width: 100%; border-collapse: collapse; font-size: 14px; }
+.nk-req th, .nk-req td { text-align: left; padding: 8px 6px; border-bottom: 1px solid rgba(255,255,255,.2); vertical-align: top; }
+.nk-req th { width: 40%; font-weight: 400; opacity: .75; }
+
+/* кнопка звонка на месте бывшей корзины в шапке */
+.nk-header-call { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid var(--nk-gold); border-radius: 999px; color: var(--nk-gold) !important; font-family: var(--nk-text-font); font-size: 14px; white-space: nowrap; transition: background .2s, color .2s; }
+.nk-header-call .nk-ico { width: 16px; height: 16px; }
+.nk-header-call:hover { background: var(--nk-gold); color: var(--nk-navy) !important; }
+@media (max-width: 767px) { .nk-header-call span { display: none; } .nk-header-call { padding: 9px; } }
+
+/* каталог */
+.nk-group-title { text-align: left; font-family: var(--nk-title-font); color: var(--nk-navy); font-size: 22px; margin: 36px 0 16px; text-transform: uppercase; }
+.nk-group-title:first-child { margin-top: 0; }
+.nk-product .nk-thumb { aspect-ratio: 3 / 2; overflow: hidden; background: #f4f4f4; }
+.nk-product .nk-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.nk-product:hover .nk-thumb img { transform: scale(1.04); }
+.nk-product .wd-entities-title { margin-top: 10px; }
+
+/* карточка товара */
+.nk-gallery { display: grid; gap: 10px; }
+.nk-gal-main { position: relative; aspect-ratio: 3 / 2; background: #f4f4f4; overflow: hidden; }
+.nk-gal-item { position: absolute; inset: 0; display: none; }
+.nk-gal-item.is-active, .nk-gal-item:first-child:not(.nk-off) { display: block; }
+.nk-gal-img { width: 100%; height: 100%; object-fit: contain; }
+.nk-gal-thumbs { display: flex; gap: 8px; flex-wrap: wrap; }
+.nk-gal-thumb { width: 84px; aspect-ratio: 3 / 2; padding: 0; border: 2px solid transparent; background: #f4f4f4; cursor: pointer; }
+.nk-gal-thumb.is-active { border-color: var(--nk-gold); }
+.nk-gal-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.nk-order { margin: 20px 0; }
+.nk-order-btn { padding: 14px 24px !important; }
+
+@media (max-width: 767px) {
+  .nk-section { padding: 40px 0; }
+  .nk-h2 { font-size: 24px; }
+  .nk-callout { flex-direction: column; align-items: flex-start; }
+}
+
+/* юридические страницы */
+.nk-legal { max-width: 860px; margin: 0 auto; color: var(--nk-text); font-size: 15px; line-height: 1.75; }
+.nk-legal .nk-h2 { text-align: left; margin-bottom: 8px; }
+.nk-legal h3 { font-family: var(--nk-title-font); color: var(--nk-navy); font-size: 20px; margin: 28px 0 10px; }
+.nk-legal ul { padding-left: 20px; margin: 0 0 16px; }
+.nk-legal li { margin-bottom: 6px; }
+
+/* реквизиты в подвале */
+.nk-requisites { background: var(--nk-navy); color: rgba(255,255,255,.65); font-size: 12px; line-height: 1.6; padding: 12px 0; text-align: center; }
+.nk-requisites a { color: var(--nk-gold); }
+.nk-policy-link { color: inherit; text-decoration: underline; }
+
+/* уведомление о cookie */
+.nk-cookie { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 9999; max-width: 720px; margin: 0 auto; background: var(--nk-navy); color: #fff; padding: 14px 18px; display: flex; gap: 16px; align-items: center; box-shadow: 0 6px 24px rgba(0,0,0,.25); font-family: var(--nk-text-font); font-size: 13px; }
+.nk-cookie[hidden] { display: none; }
+.nk-cookie p { margin: 0; flex: 1; color: #fff; }
+.nk-cookie a { color: var(--nk-gold); }
+.nk-cookie-btn { background: var(--nk-gold); color: var(--nk-navy); border: 0; padding: 9px 18px; cursor: pointer; font-weight: 600; white-space: nowrap; }
+@media (max-width: 600px) { .nk-cookie { flex-direction: column; align-items: stretch; } }
+
+/* компактный калькулятор на главной (секция ac5d698):
+   списки строкой, флажки в 3 колонки, итог строкой; карточка пакета справа на всю высоту */
+.nk-calc > .elementor-container { display: grid; grid-template-columns: minmax(0, 1fr) 300px; grid-template-areas: "sel pkg" "chk pkg" "tot pkg"; gap: 12px 16px; align-items: start; }
+.nk-calc .elementor-top-column { width: auto !important; max-width: none !important; min-width: 0; }
+.nk-calc .elementor-element-31bff18 { grid-area: sel; }
+.nk-calc .elementor-element-fdc7c72 { grid-area: chk; }
+.nk-calc .elementor-element-50361e6 { grid-area: tot; }
+.nk-calc .elementor-element-1a3df32 { grid-area: pkg; }
+.nk-calc .elementor-top-column > .elementor-widget-wrap { padding: 14px 18px !important; }
+.nk-calc .elementor-element-1a3df32 > .elementor-widget-wrap { padding: 0 !important; }
+.nk-calc .elementor-widget { margin: 0 !important; width: auto; min-width: 0; }
+.nk-calc .elementor-field-group { margin-bottom: 0 !important; }
+.nk-calc .elementor-field-label { margin-bottom: 4px !important; font-size: 14px; }
+/* 4 списка в строку */
+.nk-calc .elementor-element-31bff18 > .elementor-widget-wrap { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; align-content: start; }
+.nk-calc select, .nk-calc .elementor-field-textual { min-height: 40px; padding-top: 6px; padding-bottom: 6px; font-size: 14px; }
+/* флажки в 3 колонки */
+.nk-calc .elementor-element-fdc7c72 > .elementor-widget-wrap { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px 16px; align-items: end; }
+.nk-calc .elementor-element-fdc7c72 .elementor-field-subgroup .elementor-field-option { margin: 0 !important; }
+.nk-calc .elementor-element-fdc7c72 label { font-size: 14px; line-height: 1.35; }
+/* итог строкой */
+.nk-calc .elementor-element-50361e6 > .elementor-widget-wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.nk-calc .elementor-element-50361e6 .elementor-field-type-calculated_fields { display: flex; align-items: baseline; gap: 10px; }
+.nk-calc .elementor-element-1a3df32 li, .nk-calc .elementor-element-1a3df32 p { line-height: 1.35; }
+.nk-calc .elementor-widget-container { margin: 0 !important; }
+.nk-calc .elementor-top-column > .elementor-widget-wrap { margin: 0 !important; }
+.nk-calc .elementor-field-type-calculated_fields { flex-wrap: nowrap !important; align-items: baseline; gap: 10px; }
+.nk-calc .elementor-field-type-calculated_fields .elementor-field-label { width: auto !important; flex: 0 0 auto; }
+.nk-calc .elementor-field-type-calculated_fields .pafe-field-container, .nk-calc .pafe-calculated-fields-form { white-space: nowrap; width: auto !important; }
+.nk-calc .elementor-field-type-calculated_fields .elementor-field-label { margin: 0 !important; font-size: 16px; }
+.nk-calc .elementor-field-type-calculated_fields .pafe-field-container,
+.nk-calc .elementor-field-type-calculated_fields .pafe-calculated-fields-form { font-size: 22px; line-height: 1.2; margin: 0 !important; }
+/* карточка пакета: те же данные, меньше воздуха */
+.nk-calc .packagetabhead { padding-top: 12px !important; font-size: 18px !important; }
+.nk-calc .packagetabsubhead { font-size: 16px !important; }
+.nk-calc .packagetabprice { padding-top: 4px !important; font-size: 19px !important; }
+.nk-calc .packagetabsubprice { padding-bottom: 8px !important; }
+.nk-calc .packstr, .nk-calc .packstrlast { padding-top: 1px !important; padding-bottom: 1px !important; font-size: 13px !important; line-height: 1.35 !important; }
+.nk-calc .packstrlast { padding-bottom: 12px !important; }
+@media (max-width: 1024px) {
+  .nk-calc > .elementor-container { grid-template-columns: 1fr; grid-template-areas: "sel" "chk" "tot" "pkg"; }
+  .nk-calc .elementor-element-31bff18 > .elementor-widget-wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nk-calc .elementor-element-fdc7c72 > .elementor-widget-wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .nk-calc .elementor-element-31bff18 > .elementor-widget-wrap, .nk-calc .elementor-element-fdc7c72 > .elementor-widget-wrap { grid-template-columns: 1fr; }
+}
+
+/* согласие под формами, логотип, обложки категорий */
+.nk-consent { font-size: 12px; line-height: 1.4; color: var(--nk-muted); margin: 8px 0 0; text-align: center; }
+.nk-consent a { color: inherit; text-decoration: underline; }
+img.nk-logo { max-height: 72px; width: auto !important; }
+img.nk-cover { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+/* обложки категорий: подпись внизу на затемнении, рисунок не перекрыт */
+.nk-cover-banner .wrapper-content-banner { align-items: flex-end !important; justify-content: center; padding: 0 !important; }
+.nk-cover-banner .content-banner { width: 100%; padding: 40px 12px 14px; background: linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,0)); }
+.nk-cover-banner .banner-title { margin: 0 0 6px; }
+@media (max-width: 767px) { img.nk-logo { max-height: 52px; } }
+
+/* контраст: серый текст темы #777 на светлом фоне давал 4,1–4,5 (нужно ≥ 4,5) */
+:root { --wd-text-color: #5e5e5e; }
+
+/* ---- по итогам аудита 04.10.2026 ---- */
+/* контраст мелкого текста: золото #c3935b на светлом фоне ≈ 2,5 → тёмное золото #85612d (≥ 5,0) */
+:root { --nk-gold-text: #85612d; }
+.nk-kicker, .title-subtitle.subtitle-color-primary, .nk-link, .woocommerce-Price-currencySymbol,
+.wd-nav-tabs > li.active > a, .wd-nav-tabs > li > a:hover { color: var(--nk-gold-text) !important; }
+.btn-style-bordered.btn-color-primary, .elementor-price-table__button.elementor-button,
+a.elementor-button[class*="bordered"] { color: var(--nk-gold-text) !important; }
+.wd-breadcrumbs a, .woocommerce-breadcrumb a, .breadcrumb-link { color: #5e5e5e !important; }
+/* кнопка на первом экране поверх фото — подложка, чтобы белый текст читался на любом месте снимка */
+rs-layer a, rs-layer .rev-btn { background: rgba(13, 26, 52, .55) !important; }
+
+/* мобильные: зоны нажатия не меньше 44 px */
+@media (max-width: 767px) {
+  .nk-header-call { min-width: 44px; min-height: 44px; justify-content: center; }
+  .elementor-social-icon { width: 44px !important; height: 44px !important; display: inline-flex !important; align-items: center; justify-content: center; }
+  .scrollToTop, .wd-scroll-top, a[class*="scrollToTop"] { width: 44px !important; height: 44px !important; }
+  .wd-entities-title a { display: block; padding: 14px 0; }
+  .btn, .elementor-button, .wd-button-wrapper a, .nk-cookie-btn { min-height: 44px; display: inline-flex !important; align-items: center; justify-content: center; }
+  [data-elementor-type="header"] a[href^="tel:"]:not(.nk-header-call) { display: inline-block; padding: 17px 0; }
+}
+.promo-banner .banner-inner, .promo-banner .banner-inner p { color: #5e5e5e !important; }
+.woocommerce-tabs .wd-nav-tabs li a, .wc-tabs li a { color: #5e5e5e !important; }
+.woocommerce-tabs .wd-nav-tabs li.active a, .wc-tabs li.active a { color: var(--nk-gold-text) !important; }
+rs-layer.rev-btn, .rev-btn { background: rgba(13, 26, 52, .55) !important; }
+@media (max-width: 767px) {
+  .nk-calc select, .nk-calc .elementor-field-textual { min-height: 44px; }
+  .elementor-image-box-title a { display: inline-block; padding: 9px 0; }
+  .rev-btn, rs-layer.rev-btn { min-height: 44px !important; display: inline-flex !important; align-items: center; }
+  .elementor-element-bdeee97 a { display: inline-block; padding: 13px 0; }
+}
+.wd-accordion-title .wd-accordion-title-text, .wd-accordion-title .wd-accordion-title-text span { color: #5e5e5e !important; }
+.wd-accordion-title.wd-active .wd-accordion-title-text, .wd-accordion-title.wd-active .wd-accordion-title-text span { color: var(--nk-gold-text) !important; }
+@media (max-width: 767px) { .elementor-element-bdeee97 a { padding: 14px 0; } }
+@media (max-width: 767px) {
+  /* гарантии: отрицательный отступ из Elementor наезжал на калькулятор, когда текст переносится */
+  .elementor-element-7e3b21bb { margin-bottom: 0 !important; }
+  /* «О нас»: кнопка налезала на последнюю строку текста */
+  .elementor-element-9c58459 { margin-top: 16px !important; position: relative; }
+  .elementor-element-143b054 { height: auto !important; overflow: visible !important; }
+  /* «Услуги, которые помогают»: 5 карточек друг под другом занимали два экрана → по две в ряд */
+  /* карточки «Услуги, которые помогают»: рисунок и текст не трогаем, убираем лишние пустоты между ними */
+  .nk-services-grid { margin-top: 0 !important; margin-bottom: 0 !important; padding-top: 0 !important; padding-bottom: 0 !important; }
+  .nk-services-grid > .elementor-container > .elementor-column > .elementor-widget-wrap { padding-top: 8px !important; padding-bottom: 8px !important; }
+}
+
+/* ======================= правки 04.10.2026 (пункты 1–12) ======================= */
+/* 1. шапка закреплена (отступ под неё ставит nk-additions.js) */
+.nk-header { position: fixed !important; top: 0; left: 0; right: 0; z-index: 1000; }
+.nk-header .elementor-sticky__spacer { display: none !important; }
+/* тема заводит контент под шапку (margin-top: -40px + padding-top: 40px); с закреплённой шапкой это прячет 40 px контента */
+.main-page-wrapper { margin-top: 0 !important; padding-top: 0 !important; }
+
+/* 4. мобильная шапка как на nekropol-perm.ru: логотип слева, телефон справа, строка «Меню» */
+.nk-mhead { display: none; background: var(--nk-navy); color: #fff; font-family: var(--nk-text-font); }
+.nk-mhead-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 16px; }
+.nk-mhead-logo img { height: 46px; width: auto; display: block; }
+.nk-mhead-phone { text-align: right; color: var(--nk-gold) !important; line-height: 1.2; text-decoration: none; padding: 6px 0; }
+.nk-mhead-phone b { display: block; font-size: 16px; letter-spacing: .3px; }
+.nk-mhead-phone span { font-size: 11px; color: rgba(255,255,255,.65); text-transform: uppercase; letter-spacing: .6px; }
+.nk-mhead-menu { width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 44px;
+  background: transparent; border: 0; border-top: 1px solid rgba(195,147,91,.35); color: #fff; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; }
+.nk-mhead-menu svg { width: 22px; height: 22px; color: var(--nk-gold); }
+.nk-mnav[hidden] { display: none !important; }
+.nk-mnav ul { list-style: none; margin: 0; padding: 4px 0 10px; border-top: 1px solid rgba(255,255,255,.08); }
+.nk-mnav a { display: block; padding: 12px 20px; color: #fff !important; font-size: 15px; }
+.nk-mnav a:active, .nk-mnav a:hover { color: var(--nk-gold) !important; }
+@media (max-width: 1024px) {
+  .nk-mhead { display: block; }
+  .nk-header .elementor-section { display: none !important; }
+}
+
+/* 4. плавающие кнопки связи (как на nekropol-perm.ru) */
+.nk-fab { position: fixed; right: 16px; bottom: calc(16px + var(--nk-cookie-h, 0px)); z-index: 999; display: flex; flex-direction: column; gap: 10px; transition: bottom .3s; }
+.nk-fab a { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; color: #fff !important; box-shadow: 0 4px 14px rgba(0,0,0,.25); transition: transform .2s; }
+.nk-fab a:hover { transform: scale(1.06); }
+.nk-fab svg { width: 24px; height: 24px; }
+.nk-fab-phone { background: #c3935b; }
+.nk-fab-wa { background: #25d366; }
+.nk-fab-tg { background: #2aabee; }
+.scrollToTop, .wd-scroll-top { right: auto !important; left: 16px !important; }
+@media (max-width: 767px) { .nk-fab a { width: 48px; height: 48px; } }
+
+/* 12. подвал как на nekropol-perm.ru + ссылка на «Документы» */
+.nk-footer { background: var(--nk-navy); color: rgba(255,255,255,.8); font-family: var(--nk-text-font); font-size: 14px; }
+.nk-footer-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; padding-top: 48px; padding-bottom: 32px; }
+.nk-footer h4 { color: var(--nk-gold); font-family: var(--nk-text-font); font-size: 16px; font-weight: 600; margin: 0 0 14px; text-transform: none; }
+.nk-footer ul { list-style: none; margin: 0; padding: 0; }
+.nk-footer li { margin: 0 0 10px; line-height: 1.4; }
+.nk-footer a { color: rgba(255,255,255,.85) !important; }
+.nk-footer a:hover { color: var(--nk-gold) !important; }
+.nk-footer-bottom { border-top: 1px solid rgba(195,147,91,.25); padding-top: 18px; padding-bottom: 22px; text-align: center; font-size: 12px; color: rgba(255,255,255,.6); }
+.nk-footer-bottom p { margin: 0 0 6px; }
+.nk-footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 20px; margin-top: 10px !important; }
+.nk-footer-links a { color: var(--nk-gold) !important; }
+.nk-requisites { display: none; }
+@media (max-width: 767px) {
+  .nk-footer-cols { grid-template-columns: 1fr; gap: 20px; padding-top: 32px; }
+  .nk-footer li a { display: inline-block; padding: 4px 0; }
+  .nk-footer-links a { padding: 10px 0; }
+}
+
+/* 3. нижняя форма «Мы вам перезвоним»: форма ровно в голубой полосе */
+.nk-callback-band { background: #a8b4c3 !important; background-image: none !important; margin: 0 !important; padding: 28px 0 !important; }
+.nk-callback-band > .elementor-motion-effects-container { display: none !important; }
+.nk-callback-band > .elementor-container { min-height: 0 !important; align-items: center; }
+.nk-callback-band > .elementor-container > .elementor-column > .elementor-widget-wrap { align-content: center !important; align-items: center !important; padding-top: 0 !important; padding-bottom: 0 !important; }
+.nk-callback-band .elementor-inner-section, .nk-callback-band .elementor-inner-column > .elementor-widget-wrap { margin: 0 !important; }
+.nk-callback-band form.wpcf7-form { margin: 0; }
+
+/* 3. галочка согласия во всех формах */
+.nk-agree { display: flex !important; align-items: flex-start; gap: 8px; margin: 10px 0 4px; font-size: 13px; line-height: 1.4; color: #5e5e5e; cursor: pointer; text-align: left; width: 100%; }
+.nk-agree input { width: 18px !important; height: 18px !important; min-height: 0 !important; margin: 1px 0 0 !important; flex: 0 0 18px; accent-color: var(--nk-navy); }
+.nk-agree a { color: var(--nk-gold-text) !important; text-decoration: underline; }
+.nk-agree-error { color: #b3261e; }
+.nk-agree-error input { outline: 2px solid #b3261e; outline-offset: 1px; }
+form.nk-agree-off [type=submit] { opacity: .55; }
+
+/* 10. окно «Заказать» */
+.nk-modal { position: fixed; inset: 0; z-index: 2000; background: rgba(13,26,52,.6); display: grid; place-items: center; padding: 16px; }
+.nk-modal[hidden] { display: none; }
+.nk-modal-box { position: relative; width: 100%; max-width: 440px; background: #fff; border-top: 3px solid var(--nk-gold); padding: 28px 24px 22px; box-shadow: 0 20px 50px rgba(0,0,0,.35); font-family: var(--nk-text-font); }
+.nk-modal-box h3 { font-family: var(--nk-title-font); color: var(--nk-navy); font-size: 22px; margin: 0 40px 18px 0; text-transform: none; }
+.nk-modal-close { position: absolute; top: 10px; right: 10px; width: 44px; height: 44px; display: grid; place-items: center; background: none; border: 0; color: var(--nk-navy); cursor: pointer; }
+.nk-modal-close svg { width: 22px; height: 22px; }
+.nk-order-form input[type=text], .nk-order-form input[type=tel], .nk-order-form textarea { width: 100%; margin: 0 0 12px; padding: 12px 14px; border: 1px solid var(--nk-line); font-size: 15px; background: #faf8f5; color: var(--nk-text); }
+.nk-order-form textarea { resize: vertical; min-height: 84px; }
+.nk-btn, .nk-order-open { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 22px; border: 0; cursor: pointer;
+  background: linear-gradient(90deg, #d5a96b, #9c7237); color: #fff !important; font-size: 14px; letter-spacing: .5px; text-transform: uppercase; font-family: var(--nk-text-font); }
+.nk-order-form .nk-btn { width: 100%; margin-top: 10px; }
+.nk-order-status { margin: 10px 0 0; font-size: 13px; color: var(--nk-navy); min-height: 1em; }
+body.nk-modal-open { overflow: hidden; }
+
+/* 10. кнопка «Заказать» под карточкой */
+.nk-product .nk-order-open { width: 100%; margin-top: 10px; padding: 8px 12px; font-size: 13px; }
+.nk-order { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 20px 0; }
+.nk-order .nk-order-open { padding: 12px 28px; }
+.nk-order-call { color: var(--nk-navy) !important; font-size: 16px; padding: 10px 0; }
+
+/* 8. фото в карточках целиком (без обрезки), заглушка, если фото нет */
+.nk-product .nk-thumb { aspect-ratio: 1 / 1 !important; background: #fff; }
+.nk-product .nk-thumb img { object-fit: contain !important; padding: 6%; }
+.nk-product:hover .nk-thumb img { transform: none; }
+img.nk-noimage { object-fit: cover !important; padding: 0 !important; }
+
+/* 2. обложки категорий: рисунок целиком внутри рамки */
+img.nk-cover { object-fit: contain !important; padding: 12% 14% 24%; background: #111; }
+
+/* 7. калькулятор — одна карточка */
+.nk-calc > .elementor-container { background: #fff; border: 1px solid var(--nk-line); box-shadow: 0 6px 24px rgba(13,26,52,.06); padding: 8px; }
+.nk-calc .elementor-top-column, .nk-calc .elementor-top-column > .elementor-widget-wrap { background: transparent !important; box-shadow: none !important; border: 0 !important; }
+.nk-calc .elementor-element-fdc7c72, .nk-calc .elementor-element-50361e6 { border-top: 1px solid var(--nk-line) !important; }
+.nk-calc .elementor-element-1a3df32 > .elementor-widget-wrap { padding: 14px 14px 14px 0 !important; }
+
+/* 5. на телефоне карточки — лентой с прокруткой вбок, чтобы не растягивать страницу */
+@media (max-width: 767px) {
+  .wd-products-holder, .nk-reviews, .nk-cards, .nk-strip > .elementor-container, .nk-services-grid > .elementor-container {
+    display: flex !important; flex-wrap: nowrap !important; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px;
+    -webkit-overflow-scrolling: touch; padding-bottom: 10px; margin-left: 0 !important; margin-right: 0 !important; scrollbar-width: thin; }
+  .wd-products-holder > .product-grid-item { flex: 0 0 66% !important; max-width: 66% !important; width: 66% !important; scroll-snap-align: start; padding: 0 !important; }
+  .nk-reviews > *, .nk-cards > * { flex: 0 0 82%; scroll-snap-align: start; }
+  .nk-strip > .elementor-container > .elementor-column, .nk-services-grid > .elementor-container > .elementor-column { flex: 0 0 80% !important; width: 80% !important; max-width: 80% !important; scroll-snap-align: start; }
+  .nk-callback-band { padding: 20px 12px !important; }
+  .nk-callback-band > .elementor-container { flex-direction: column; }
+  .nk-callback-band > .elementor-container > .elementor-column { width: 100% !important; }
+  .nk-callback-band > .elementor-container > .elementor-column:first-child:not(:has(form)) { display: none; }
+  .nk-callback-band > .elementor-container > .elementor-column:last-child { order: -1; background-image: none !important; }
+  .nk-callback-band > .elementor-container > .elementor-column:last-child .elementor-widget-wrap { background-image: none !important; padding: 0 0 10px !important; }
+  .nk-callback-band form.wpcf7-form table, .nk-callback-band form.wpcf7-form tbody, .nk-callback-band form.wpcf7-form tr, .nk-callback-band form.wpcf7-form td { display: block; width: 100%; }
+  .nk-callback-band form.wpcf7-form input:not([type=checkbox]) { width: 100%; }
+  .nk-services-grid > .elementor-container > .elementor-column > .elementor-widget-wrap { padding: 0 !important; }
+  .nk-services-grid .elementor-widget, .nk-services-grid .elementor-widget-container, .nk-services-grid .promo-banner,
+  .nk-services-grid .main-wrapp-img, .nk-services-grid .banner-image, .nk-services-grid .banner-image img { width: 100% !important; max-width: none !important; }
+  .nk-services-grid { margin-bottom: 12px !important; }
+}
+
+/* 6. плавное появление блоков */
+@media (prefers-reduced-motion: no-preference) {
+  .nk-js .nk-reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+  .nk-js .nk-reveal.nk-in { opacity: 1; transform: none; }
+}
+
+/* ======================= правки 05.10.2026 ======================= */
+/* 2. фото товара целиком: <picture> и ссылка — на всю высоту квадрата, иначе img выше квадрата и обрезается */
+.nk-product .nk-thumb .product-image-link, .nk-product .nk-thumb picture { display: block; width: 100%; height: 100%; }
+.nk-product .nk-thumb img { width: 100% !important; height: 100% !important; object-fit: contain !important; }
+.nk-gal-item picture { display: block; width: 100%; height: 100%; }
+
+/* 1, 5. карточки одной высоты: название сверху, цена и «Заказать» прижаты к низу — кнопки в ряд по одной линии */
+.wd-products-holder:has(.nk-product) { align-items: stretch !important; }
+.nk-product { display: flex; }
+.nk-product .product-wrapper { display: flex; flex-direction: column; width: 100%; height: 100%; }
+.nk-product .wd-entities-title { margin-bottom: 6px; }
+.nk-product .price { margin-top: auto; }
+.nk-product .nk-order-open { margin-top: 10px; }
+
+/* 4. текст в карточках услуг: у темы фиксированная высота текста (2 строки) — при 3 строках он залезал на кнопку */
+.promo-banner .banner-inner { height: auto !important; max-height: none !important; }
+.promo-banner .content-banner { height: auto !important; }
+
+/* 3. лилия в полосе формы: колонка на всю высоту полосы, цветок целиком */
+.nk-callback-band > .elementor-container > .elementor-column:last-child { align-self: stretch; }
+.nk-callback-band > .elementor-container > .elementor-column:last-child > .elementor-widget-wrap {
+  min-height: 245px; height: 100%; background-size: contain !important; background-position: center bottom !important; background-repeat: no-repeat !important; }
+
+/* 6. галочка согласия ровно по центру строки текста */
+.nk-agree { align-items: center !important; gap: 10px; }
+.nk-agree input { margin: 0 !important; align-self: center; }
+.nk-agree span { line-height: 1.45; }
+
+/* 7. просмотр фото на весь экран */
+.nk-zoom { cursor: zoom-in; }
+.nk-lb { position: fixed; inset: 0; z-index: 2100; background: rgba(8, 14, 28, .92); display: grid; place-items: center; padding: 56px 16px; }
+.nk-lb[hidden] { display: none; }
+.nk-lb-figure { margin: 0; max-width: min(1100px, 100%); max-height: 100%; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.nk-lb-img { max-width: 100%; max-height: calc(100vh - 150px); object-fit: contain; background: #fff; }
+.nk-lb-cap { color: #fff; font-family: var(--nk-text-font); font-size: 15px; text-align: center; }
+.nk-lb-cap small { display: block; color: rgba(255,255,255,.6); margin-top: 4px; }
+.nk-lb-btn { position: absolute; width: 48px; height: 48px; display: grid; place-items: center; border: 0; border-radius: 50%; background: rgba(255,255,255,.12); color: #fff; cursor: pointer; }
+.nk-lb-btn:hover { background: rgba(255,255,255,.25); }
+.nk-lb-btn svg { width: 24px; height: 24px; }
+.nk-lb-close { top: 12px; right: 12px; }
+.nk-lb-prev { left: 12px; top: 50%; transform: translateY(-50%); }
+.nk-lb-next { right: 12px; top: 50%; transform: translateY(-50%); }
+.nk-lb-prev[hidden], .nk-lb-next[hidden] { display: none; }
+@media (max-width: 767px) { .nk-lb-prev, .nk-lb-next { top: auto; bottom: 12px; transform: none; } }
+
+/* Custom CSS из настроек WoodMart на живом сайте задаёт жёсткие высоты, из-за которых текст залезал на кнопки:
+   .reset-last-child>*:last-child{height:3em} и .promo-banner .content-banner>div:first-child{height:3.5em};
+   там же названия товаров 24px и pointer-events:none (по названию нельзя перейти). Перекрываем. */
+.reset-last-child > :last-child { height: auto !important; }
+.promo-banner .content-banner > div:first-child { height: auto !important; min-height: 3.5em; }
+.product-grid-item .wd-entities-title { pointer-events: auto !important; font-size: 17px !important; line-height: 1.35 !important; }
+.product-grid-item .wd-entities-title a { color: var(--nk-navy) !important; }
+.product-grid-item .wd-entities-title a:hover { color: var(--nk-gold-text) !important; }
+.nk-services-grid .promo-banner .banner-inner { min-height: 3.2em; }  /* текст 1–2 строки: кнопки в ряду на одной линии */
