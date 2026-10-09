@@ -417,3 +417,22 @@ img.nk-cover { object-fit: contain !important; padding: 12% 14% 24%; background:
 .product-grid-item .wd-entities-title a { color: var(--nk-navy) !important; }
 .product-grid-item .wd-entities-title a:hover { color: var(--nk-gold-text) !important; }
 .nk-services-grid .promo-banner .banner-inner { min-height: 3.2em; }  /* текст 1–2 строки: кнопки в ряду на одной линии */
+
+/* правки 09.10.2026: обложки категорий на белом фоне (по просьбе заказчика) */
+.nk-cover-banner { background: #fff !important; border: 1px solid var(--nk-line); }
+.nk-cover-banner .main-wrapp-img, .nk-cover-banner .banner-image { background: #fff !important; }
+img.nk-cover { background: #fff !important; padding: 12% 20% 34% !important; }
+.nk-cover-banner .wrapper-content-banner { border: 1px solid rgba(195,147,91,.55) !important; display: flex !important; flex-direction: column !important; justify-content: flex-end !important; align-items: stretch !important; }
+.nk-cover-banner .wrapper-content-banner:after { display: none !important; }
+.nk-cover-banner .content-banner { background: none !important; padding: 0 6px 8% !important; margin-top: auto !important; width: 100%; }
+.nk-cover-banner .banner-title { color: var(--nk-navy) !important; text-shadow: none !important; margin: 0 !important; }
+.nk-cover-banner .banner-btn-wrapper { display: none !important; }
+.nk-cover-banner:hover { border-color: var(--nk-gold); }
+@media (max-width: 767px) { .nk-cover-banner .banner-title { font-size: 18px !important; } }
+.nk-cover-banner .wrapper-content-banner .content-banner { position: absolute !important; left: 0 !important; right: 0 !important; bottom: 0 !important; top: auto !important; transform: none !important; }
+@media (max-width: 767px) {
+  .nk-cover-banner .wrapper-content-banner { top: 10px !important; right: 10px !important; bottom: 10px !important; left: 10px !important; }
+  img.nk-cover { padding: 8% 16% 30% !important; }
+  .nk-cover-banner .wrapper-content-banner .content-banner { padding-bottom: 6% !important; }
+}
+.nk-cover-banner .content-banner > div:first-child { min-height: 0 !important; height: auto !important; }
